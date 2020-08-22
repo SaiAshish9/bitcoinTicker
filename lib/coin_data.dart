@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter_config/flutter_config.dart';
 import 'package:http/http.dart' as http;
 
 const List<String> currenciesList = [
@@ -28,7 +29,7 @@ const List<String> currenciesList = [
 const List<String> cryptoList = ['BTC', 'ETH', 'LTC'];
 
 const coinAPIURL = 'https://rest.coinapi.io/v1/exchangerate';
-const apiKey = 'YOUR-API-KEY-HERE';
+final apiKey = FlutterConfig.get('API');
 
 class CoinData {
   Future getCoinData(String selectedCurrency) async {

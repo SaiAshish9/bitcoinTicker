@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'price_screen.dart';
+import 'package:flutter_config/flutter_config.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FlutterConfig.loadEnvVariables();
+}
 
 class MyApp extends StatelessWidget {
   @override
